@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {AUTH_USER, AUTH_ERROR} from './type';
+import {AUTH_USER, AUTH_ERROR, UNAUTH_USER} from './type';
 
 const ROOT_URL = "http://localhost:3090";
 
@@ -16,6 +16,12 @@ export const signInUser = ({email, password}) => async dispatch => {
     } catch (err) {
         return dispatch(authError('Error in login'))
     }
+};
+
+export const signOutUser = () => {
+    localStorage.removeItem('token');
+
+    return {type: UNAUTH_USER};
 };
 
 export const authError = (error) => {
