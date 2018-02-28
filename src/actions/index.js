@@ -9,12 +9,25 @@ export const signInUser = ({email, password}) => async dispatch => {
             email,
             password
         });
-        console.log(token);
 
         dispatch({type: AUTH_USER});
         localStorage.setItem('token', token.data.token);
     } catch (err) {
-        return dispatch(authError('Error in login'))
+        return dispatch(authError('Error in login'));
+    }
+};
+
+export const signUpUser = ({email, password}) => async dispatch => {
+    try {
+        const token = await axios.post(`${ROOT_URL}/signup`, {
+            email,
+            password
+        });
+
+        dispatch({type: AUTH_USER});
+        localStorage.setItem('token', token.data.token);
+    } catch (err) {
+        dispatch(authError(err.response.data.error));
     }
 };
 

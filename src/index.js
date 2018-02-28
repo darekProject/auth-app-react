@@ -9,7 +9,8 @@ import App from './App';
 import reducers from './reducers';
 import SignIn from "./components/SignIn/SignIn";
 import SignOut from "./components/SignOut/SignOut";
-import Orders from "./components/Orders/Orders";
+import SignUp from "./components/SignUp/SignUp";
+import Orders from "./containers/Orders/Orders";
 import RequireAuth from './components/AuthHoC/AuthHoC'
 import {AUTH_USER} from "./actions/type";
 
@@ -31,6 +32,7 @@ ReactDOM.render(
                 <Route path="/" component={App}/>
                 <Route path="/signin" component={SignIn}/>
                 <Route path="/signout" component={SignOut}/>
+                <Route path="/signup" component={SignUp}/>
                 <Route path="/orders" component={RequireAuth(Orders)}/>
             </div>
         </BrowserRouter>
