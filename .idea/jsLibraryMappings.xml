@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{@types/bootstrap, @types/es6-promisify, @types/react, @types/requirejs}" />
+    <file url="file://$PROJECT_DIR$" libraries="{sub-app/node_modules}" />
+    <file url="PROJECT" libraries="{@types/bcryptjs, @types/bootstrap, @types/chai, @types/chai-http, @types/es6-promisify, @types/express, @types/jwt-client, @types/jwt-decode, @types/mocha, @types/mongodb, @types/mongoose, @types/passport, @types/react, @types/redux-action, @types/requirejs, @types/sequelize, sub-app/node_modules}" />
+    <includedPredefinedLibrary name="Nashorn" />
   </component>
 </project>

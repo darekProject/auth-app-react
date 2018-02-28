@@ -5,9 +5,21 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="@types/bcryptjs" level="application" />
     <orderEntry type="library" name="@types/bootstrap" level="application" />
+    <orderEntry type="library" name="@types/chai" level="application" />
+    <orderEntry type="library" name="@types/chai-http" level="application" />
     <orderEntry type="library" name="@types/es6-promisify" level="application" />
+    <orderEntry type="library" name="@types/express" level="application" />
+    <orderEntry type="library" name="@types/jwt-client" level="application" />
+    <orderEntry type="library" name="@types/jwt-decode" level="application" />
+    <orderEntry type="library" name="@types/mocha" level="application" />
+    <orderEntry type="library" name="@types/mongodb" level="application" />
+    <orderEntry type="library" name="@types/mongoose" level="application" />
+    <orderEntry type="library" name="@types/passport" level="application" />
     <orderEntry type="library" name="@types/react" level="application" />
+    <orderEntry type="library" name="@types/redux-action" level="application" />
     <orderEntry type="library" name="@types/requirejs" level="application" />
+    <orderEntry type="library" name="@types/sequelize" level="application" />
   </component>
 </module>
