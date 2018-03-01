@@ -2,8 +2,22 @@ import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import * as actions from "../../actions/index";
 import {connect} from "react-redux";
+import PropTypes from "prop-types";
 
 class SignUp extends Component {
+    static propTypes = {
+        authenticated: PropTypes.bool,
+        errorMessage: PropTypes.string,
+        signUpUser: PropTypes.func
+    };
+
+    static defaultProps = {
+        authenticated: false,
+        errorMessage: '',
+        signUpUser: () => {
+        }
+    };
+
     componentWillReceiveProps(nextProps) {
         if (nextProps.authenticated) {
             this.props.history.push('/orders');
@@ -41,7 +55,7 @@ class SignUp extends Component {
                         </div>
                     </div>
                     <div className="form-group row">
-                        <label className="col-2 col-form-label">Password: </label>
+                        <label className="col-2 col-form-label">Password Confirm: </label>
                         <div className="col-10">
                             <Field type="password" component="input" name="passwordConfirm" className="form-control"/>
                         </div>

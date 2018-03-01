@@ -1,9 +1,23 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {Field, reduxForm} from 'redux-form';
 import * as actions from "../../actions/index";
 import {connect} from "react-redux";
 
 class SignIn extends Component {
+    static propTypes = {
+        authenticated: PropTypes.bool,
+        errorMessage: PropTypes.string,
+        signInUser: PropTypes.func
+    };
+
+    static defaultProps = {
+        authenticated: false,
+        errorMessage: '',
+        signInUser: () => {
+        }
+    };
+
     componentWillReceiveProps(nextProps) {
         if (nextProps.authenticated) {
             this.props.history.push('/orders');
@@ -27,7 +41,8 @@ class SignIn extends Component {
 
         return (
             <div className="container d-flex justify-content-center">
-                <form style={{marginTop: '50px'}} className="col-6" onSubmit={handleSubmit((values) => this.handleFormSubmit(values))}>
+                <form style={{marginTop: '50px'}} className="col-6"
+                      onSubmit={handleSubmit((values) => this.handleFormSubmit(values))}>
                     <div className="form-group row">
                         <label className="col-2 col-form-label">E-mail: </label>
                         <div className="col-10">
